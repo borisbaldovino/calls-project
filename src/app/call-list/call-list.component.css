@@ -1,0 +1,27 @@
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.demo-table {
+width: 100%;
+}
+
+.mat-row .mat-cell {
+border-bottom: 1px solid transparent;
+border-top: 1px solid transparent;
+cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+border-color: currentColor;
+}
+
+.selected {
+background-color: rgb(236, 245, 252);
+}
+
+.margin-left-20{
+    margin-left: 20px;
+}
