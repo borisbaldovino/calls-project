@@ -143,13 +143,14 @@ export class CallListComponent implements OnInit {
   }
 
   // Reset table filters
-  resetFilters() {
-    this.filterValues = {}
-    this.filterSelectObj.forEach((value, key) => {
-      value.modelValue = undefined;
-    })
-    this.dataSource.filter = "";
-  }
+  // resetFilters() {
+  //   this.filterValues = {}
+  //   this.filterSelectObj.forEach((value, key) => {
+  //     value.modelValue = undefined;
+  //   })
+
+  //   this.dataSource.filter = "";
+  // }
 }
 
 @Component({
