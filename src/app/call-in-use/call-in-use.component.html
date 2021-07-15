@@ -1,0 +1,82 @@
+<div>
+  <button mat-stroked-button color="basic" routerLink="/"><i class="material-icons">chevron_left</i> Back to list of calls</button>
+</div>
+<h1>Call in use</h1>
+<h3>Customer</h3>
+
+<div *ngIf="customer">
+
+  <form [formGroup]="callForm">
+    
+    <!-- Title -->
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="title" [(ngModel)]="customer.title" required>
+        <mat-option value="Mr">Mr</mat-option>
+        <mat-option value="Mrs">Mrs</mat-option>
+        <mat-option value="Miss">Miss</mat-option>
+        <mat-option value="Ms">Ms</mat-option>
+        <mat-option value="Sir">Sir</mat-option>
+        <mat-option value="Dr">Dr</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+
+    <!-- First Name -->
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" [(ngModel)]="customer.first_name" required>
+      <mat-error *ngIf="callForm.controls.firstName.touched && callForm.controls.firstName.invalid">
+        <span>This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <!-- Surname -->
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput formControlName="surname" [(ngModel)]="customer.surname" required>
+      <mat-error *ngIf="callForm.controls.surname.touched && callForm.controls.surname.invalid">
+        <span>This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <!-- Mobile -->
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Mobile</mat-label>
+      <input matInput formControlName="mobile" [(ngModel)]="customer.mobile" required>
+      <mat-error *ngIf="callForm.controls.mobile.touched && callForm.controls.mobile.invalid">
+        <span>This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <button mat-stroker-button color="primary" class="call-button" (click)="makeCall()">Call Mobile Phone</button>
+    <br />
+
+    <!-- Home -->
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Home</mat-label>
+      <input matInput formControlName="home" [(ngModel)]="customer.home" required>
+      <mat-error *ngIf="callForm.controls.home.touched && callForm.controls.home.invalid">
+        <span>This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+    <button mat-stroker-button color="primary" class="call-button" (click)="makeCall()">Call Home Phone</button>
+
+    <div class="full-width container-buttons">
+      <!-- Update -->
+      <button mat-stroker-button color="primary" class="update-button" (click)="updateCustomer()">Update</button>
+      <!-- Reset -->
+      <button mat-stroker-button color="primary" (click)="reset()">Reset</button>
+    </div>
+    
+    <div class="full-width container-buttons margin-top-20">
+      <!-- Complete call -->
+      <button mat-stroker-button color="primary" (click)="completeCall()">Complete Call</button>
+    </div>
+    
+  </form>
+
+  <!-- <p>Form Status: {{ callForm.status }}</p> -->
+
+</div>
